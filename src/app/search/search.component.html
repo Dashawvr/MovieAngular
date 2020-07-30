@@ -1,4 +1,4 @@
-<!--<div class="filter-wrapper">-->
+ <!--<div class="filter-wrapper">-->
 <!--  <div class="keyword-wrapper">-->
 <!--    <input-->
 <!--      [(ngModel)]="movie.title"-->
@@ -10,6 +10,10 @@
 <!--    <button (click)="search()" [disabled]="!title.valid">Search</button>-->
 <!--  </div>-->
 <!--</div>-->
+
+
+<!-- ////-->
+
 <div class="filter-wrapper">
   <div class="keyword-wrapper">
     <input
@@ -31,6 +35,21 @@
       [movie]="movie">
     </app-card>
 </div>
+
+<!--&lt;!&ndash;//////&ndash;&gt;-->
+<!-- <form [formGroup]="messegeForms" (ngSubmit)="getSearchResults()">-->
+<!--   <div class="keyword-wrapper">-->
+<!--     <input id="query"-->
+<!--            type="text"-->
+<!--            class="form-control"-->
+<!--            formControlName="query">-->
+<!--     <div *ngIf="query"></div>-->
+<!--&lt;!&ndash;     <button (click)="getSearchResults()">Search</button>&ndash;&gt;-->
+<!--     <input type="submit" value="send message">-->
+<!--   </div>-->
+<!-- </form>-->
+<!--&lt;!&ndash; /////&ndash;&gt;-->
+
 
 <!--<div class="container">-->
 <!--  <div class="form-group">-->
