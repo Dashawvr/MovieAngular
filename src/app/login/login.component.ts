@@ -16,11 +16,16 @@ export class LoginComponent implements OnInit {
   loading = false;
   submitted = false;
   returnUrl: string;
+
   constructor(private formBuilder: FormBuilder,
               private route: ActivatedRoute,
               private router: Router,
               private authService: AuthService,
-              private alertService: AlertService) { }
+              private alertService: AlertService) {
+    if (this.authService.currentUserValue) {
+      this.router.navigate(['/']);
+    }
+  }
 
   ngOnInit(): void {
     this.loginForm = this.formBuilder.group({
@@ -28,6 +33,7 @@ export class LoginComponent implements OnInit {
       password: ['', Validators.required]
     });
   }
+
   get f() {
     return this.loginForm.controls;
   }
