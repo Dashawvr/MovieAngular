@@ -33,6 +33,9 @@ export class DataService {
         map((response: any) => response.Search)
       );
   }
+  getMovies(): any {
+    return this.http.get(`https://omdbapi.com/?apikey=${this.API_KEY}&s=avengers`);
+  }
 
   // searchMovie(searchQuery: string): Observable<Array<Movie>> {
   //   return this.http.get(`https://api.themoviedb.org/3/search/movie?api_key=${this.API_KEY}&q=${searchQuery}`)

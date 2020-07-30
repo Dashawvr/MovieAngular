@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {DataService} from '../services/data.service';
+import {Movie} from '../models/Movie';
 
 @Component({
   selector: 'app-home',
@@ -7,8 +8,9 @@ import {DataService} from '../services/data.service';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-
-  constructor(private dataService: DataService) { }
+  public movies =  {};
+  constructor(private dataService: DataService) {}
   ngOnInit(): void {
+    this.dataService.getMovies().subscribe(data => this.movies = data);
   }
 }

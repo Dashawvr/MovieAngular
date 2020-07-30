@@ -21,7 +21,12 @@ export class SearchComponent implements OnInit {
 
   query: string = localStorage.getItem('input-movie');
   movies: Observable<Array<Movie>>;
-  constructor(private dataService: DataService) {}
+  // messegeForms: FormGroup;
+  constructor(private dataService: DataService, private formBuilder: FormBuilder) {
+    // this.messegeForms = this.formBuilder.group({
+    //   query: ['Avengers', Validators.required]
+    // });
+  }
 
   ngOnInit(): void {}
 //

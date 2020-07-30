@@ -26,7 +26,5 @@ export class ContactComponent implements OnInit {
     }
     this.success = true;
   }
-  ngOnInit(): void {
-  }
-
+  ngOnInit(): void {}
 }
