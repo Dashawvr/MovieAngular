@@ -6,6 +6,7 @@ import {FavoriteComponent} from './favorite/favorite.component';
 import {ContactComponent} from './contact/contact.component';
 import {SearchComponent} from './search/search.component';
 import {DetailComponent} from './detail/detail.component';
+import {LoginComponent} from './login/login.component';
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
@@ -13,6 +14,7 @@ const routes: Routes = [
   {path: 'contact', component: ContactComponent},
   {path: 'movie-search', component: SearchComponent},
   {path: 'movie-detail', component: DetailComponent},
+  {path: 'login', component: LoginComponent},
   {path: '**', redirectTo: '/', pathMatch: 'full'}
 ];
 
