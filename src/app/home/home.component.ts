@@ -31,7 +31,7 @@ export class HomeComponent implements OnInit {
     this.dataService.getMovies().subscribe(data => this.movies = data);
   }
 
-  ngOnDestroy() {
+  ngOnDestroy(): void {
     this.currentUserSubscription.unsubscribe();
   }
 
