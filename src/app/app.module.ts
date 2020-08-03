@@ -11,8 +11,8 @@ import { DetailComponent } from './detail/detail.component';
 import { FavoriteComponent } from './favorite/favorite.component';
 import { ThemeComponent } from './theme/theme.component';
 
-import {RouterModule, Routes} from '@angular/router';
-import {HttpClientModule} from '@angular/common/http';
+// import {RouterModule, Routes} from '@angular/router';
+// import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 import {StringPipe} from './utils/string.pipe';
@@ -25,10 +25,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {AppRoutingModule} from './app-routing.module';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
-
-
-
-
+// import {ErrorInterceptor} from './help/error.interceptor';
+// import {TokenInterceptor} from './help/token.interceptor';
+// import {fakeBackendProvider} from './help/fake-back.interceptor';
+import {HttpClientModule} from '@angular/common/http';
 
 // const routes: Routes = [
 //   {path: '', component: HomeComponent},
@@ -66,7 +66,11 @@ import { RegisterComponent } from './register/register.component';
     BrowserAnimationsModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [
+  //   {provide: HTTP_INTERCEPTORS, useClass: TokenInterceptor, multi: true},
+  //   {provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true},
+  //   fakeBackendProvider
+    ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

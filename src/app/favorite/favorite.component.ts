@@ -22,7 +22,6 @@ export class FavoriteComponent implements OnInit {
     }
   }
 
-  // Add (or remove) from favorites in sessionStorage
   AddToFavorite(movie): void {
     this.favoritesService.addToFavorites(movie);
     this.favorite =  JSON.parse(localStorage.getItem('Favorites'));
