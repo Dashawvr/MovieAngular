@@ -8,6 +8,7 @@ import {SearchComponent} from './search/search.component';
 import {DetailComponent} from './detail/detail.component';
 import {LoginComponent} from './login/login.component';
 import {RegisterComponent} from './register/register.component';
+// import {AuthGuard} from './help/auth.guard';
 
 const routes: Routes = [
   {path: '', component: HomeComponent},

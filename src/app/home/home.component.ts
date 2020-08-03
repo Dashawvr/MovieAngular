@@ -14,36 +14,36 @@ import {first} from 'rxjs/operators';
 })
 export class HomeComponent implements OnInit {
   public movies = {};
-  // currentUser: User;
-  // currentUserSubscription: Subscription;
-  // users: User[] = [];
+  currentUser: User;
+  currentUserSubscription: Subscription;
+  users: User[] = [];
 
   constructor(private dataService: DataService,
               private authService: AuthService,
               private userService: UserService) {
-    // this.currentUserSubscription = this.authService.currentUser.subscribe(user => {
-    //   this.currentUser = user;
-    // });
+    this.currentUserSubscription = this.authService.currentUser.subscribe(user => {
+      this.currentUser = user;
+    });
   }
 
   ngOnInit(): void {
-    // this.loadAllUsers();
+    this.loadAllUsers();
     this.dataService.getMovies().subscribe(data => this.movies = data);
   }
 
-  // ngOnDestroy() {
-  //   this.currentUserSubscription.unsubscribe();
-  // }
-  //
-  // deleteUser(id: number): void {
-  //   this.userService.delete(id).pipe(first()).subscribe(() => {
-  //     this.loadAllUsers();
-  //   });
-  // }
-  //
-  // private loadAllUsers(): void {
-  //   this.userService.getAll().pipe(first()).subscribe(users => {
-  //     this.users = users;
-  //   });
-  // }
+  ngOnDestroy(): void {
+    this.currentUserSubscription.unsubscribe();
+  }
+
+  deleteUser(id: number): void {
+    this.userService.delete(id).pipe(first()).subscribe(() => {
+      this.loadAllUsers();
+    });
+  }
+
+  private loadAllUsers(): void {
+    this.userService.getAll().pipe(first()).subscribe(users => {
+      this.users = users;
+    });
+  }
 }
